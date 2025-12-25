@@ -1,0 +1,171 @@
+TECHNOS E-COMMERCE PROJECT GUIDE
+================================
+
+1. LOGIN CREDENTIALS
+-------------------
+Admin Account:
+- Email: arham@admin.com
+- Password: password
+
+Regular User Account:
+- Email: arham@user.com
+- Password: password
+
+2. USEFUL ARTISAN COMMANDS
+-------------------------
+# Database Commands
+php artisan migrate              # Run migrations
+php artisan migrate:fresh       # Drop all tables and re-run migrations
+php artisan migrate:fresh --seed # Drop all tables, re-run migrations and seed
+php artisan migrate:rollback    # Rollback the last migration
+php artisan migrate:status      # Check migration status
+
+# Seeder Commands
+php artisan db:seed            # Run all seeders
+php artisan db:seed --class=UserSeeder    # Run specific seeder
+php artisan db:seed --class=ProductSeeder
+php artisan db:seed --class=CategorySeeder
+php artisan db:seed --class=SliderSeeder
+
+# Cache Commands
+php artisan cache:clear        # Clear application cache
+php artisan config:clear       # Clear configuration cache
+php artisan view:clear         # Clear view cache
+php artisan route:clear        # Clear route cache
+
+# Storage Commands
+php artisan storage:link       # Create symbolic link for storage
+php artisan storage:clear      # Clear storage cache
+
+# Other Commands
+php artisan serve              # Start development server
+php artisan make:model -m      # Create model with migration
+php artisan make:controller    # Create controller
+php artisan make:seeder        # Create seeder
+php artisan make:middleware    # Create middleware
+php artisan make:request       # Create form request
+
+3. IMPORTANT ROUTES
+------------------
+Homepage: http://localhost:8000
+Admin Dashboard: http://localhost:8000/admin
+Shop: http://localhost:8000/shop
+Cart: http://localhost:8000/cart
+Wishlist: http://localhost:8000/wishlist
+Profile: http://localhost:8000/profile
+Login: http://localhost:8000/login
+Register: http://localhost:8000/register
+
+4. DATABASE STRUCTURE
+--------------------
+Main Tables:
+- users
+- products
+- categories
+- orders
+- order_items
+- wishlists
+- sliders
+- contacts
+- newsletter_subscribers
+- reviews
+- coupons
+
+5. STORAGE STRUCTURE
+-------------------
+Public Storage:
+- /storage/app/public/products/    # Product images
+- /storage/app/public/categories/  # Category images
+- /storage/app/public/sliders/     # Slider images
+- /storage/app/public/users/       # User profile photos
+
+6. IMPORTANT FILES
+-----------------
+- .env                    # Environment configuration
+- config/app.php         # Application configuration
+- routes/web.php         # Web routes
+- resources/views/       # View files
+- app/Http/Controllers/  # Controllers
+- app/Models/           # Models
+- database/migrations/  # Database migrations
+- database/seeders/    # Database seeders
+
+7. DEVELOPMENT NOTES
+-------------------
+- Always run migrations with --seed flag for fresh data
+- Use storage:link command after fresh installation
+- Clear cache if you make changes to config files
+- Check .env file for proper database configuration
+- Make sure storage directory is writable
+
+8. TROUBLESHOOTING
+-----------------
+If you encounter issues:
+1. Clear all caches:
+   php artisan cache:clear
+   php artisan config:clear
+   php artisan view:clear
+   php artisan route:clear
+
+2. Check storage permissions:
+   - Ensure storage directory is writable
+   - Run storage:link if images don't show
+
+3. Database issues:
+   - Check .env file for correct credentials
+   - Run migrations with --seed flag
+   - Check database connection
+
+4. Image upload issues:
+   - Verify storage:link is created
+   - Check storage permissions
+   - Verify file upload size limits in php.ini
+
+9. DEPLOYMENT CHECKLIST
+----------------------
+1. Update .env file with production settings
+2. Set APP_ENV=production
+3. Set APP_DEBUG=false
+4. Generate application key if needed
+5. Run migrations
+6. Set up storage link
+7. Configure web server
+8. Set proper permissions
+9. Enable SSL if needed
+10. Configure mail settings
+
+10. SECURITY NOTES
+----------------
+- Never commit .env file
+- Keep composer packages updated
+- Use HTTPS in production
+- Implement proper validation
+- Sanitize user inputs
+- Use CSRF protection
+- Implement rate limiting
+- Regular security audits
+
+11. PERFORMANCE TIPS
+------------------
+- Enable caching
+- Optimize images
+- Use lazy loading
+- Implement pagination
+- Use eager loading
+- Optimize database queries
+- Use CDN for assets
+- Enable compression
+
+12. MAINTENANCE
+-------------
+Regular tasks:
+- Clear cache
+- Update packages
+- Backup database
+- Check error logs
+- Monitor performance
+- Update security patches
+- Clean temporary files
+- Optimize database
+
+Remember to keep this file updated as you make changes to the project! 
